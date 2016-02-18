@@ -2,6 +2,9 @@ package fox.spiteful.forbidden;
 
 import fox.spiteful.forbidden.blocks.ForbiddenBlocks;
 import fox.spiteful.forbidden.items.ForbiddenItems;
+import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.SidedProxy;
@@ -19,6 +22,14 @@ public class Forbidden {
     public static Forbidden instance;
     @SidedProxy(clientSide = "fox.spiteful.forbidden.client.ClientProxy", serverSide = "fox.spiteful.forbidden.Proxy")
     public static Proxy proxy;
+
+    public static CreativeTabs tab = new CreativeTabs("forbidden") {
+        @Override
+        public Item getTabIconItem() {
+
+            return ForbiddenItems.resource;
+        }
+    };
 
     @Mod.EventHandler
     public void bell(FMLPreInitializationEvent event)

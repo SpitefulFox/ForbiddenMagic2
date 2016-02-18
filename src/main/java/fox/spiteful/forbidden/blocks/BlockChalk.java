@@ -1,5 +1,6 @@
 package fox.spiteful.forbidden.blocks;
 
+import fox.spiteful.forbidden.Forbidden;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
@@ -14,6 +15,7 @@ public class BlockChalk extends Block {
         super(Material.circuits);
         setUnlocalizedName("forbidden_chalk_rune");
         this.setBlockBounds(0.0F, 0.0F, 0.0F, 1.0F, 0.0625F, 1.0F);
+        setCreativeTab(Forbidden.tab);
     }
 
     public AxisAlignedBB getCollisionBoundingBox(World worldIn, BlockPos pos, IBlockState state)

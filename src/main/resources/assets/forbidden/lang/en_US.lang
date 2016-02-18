@@ -3,7 +3,7 @@
 item.forbidden_resource_vellum.name=Vellum
 #
 # Blocks
-
+tile.forbidden_chalk_rune.name=Profane Rune
 #
 # Misc
 itemGroup.forbidden=Forbidden Magic 2
