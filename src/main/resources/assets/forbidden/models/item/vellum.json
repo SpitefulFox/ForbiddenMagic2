@@ -1,0 +1,6 @@
+{
+  "parent": "forbidden:item/base_item",
+  "textures": {
+    "layer0": "forbidden:items/vellum"
+  }
+}

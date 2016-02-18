@@ -1,0 +1,17 @@
+[
+{
+  "modid" : "ForbiddenMagic",
+  "name" : "Forbidden Magic 2",
+  "version": "${version}",
+  "mcversion": "1.8.9",
+  "url" : "",
+  "credits" : "Glassmaker, Vazkii, Othlon, CandiceJoy",
+  "authorList": [ "SpitefulFox" ],
+  "description": "Forbidden Magic 2 is a magic mod about being dark and brooding.",
+  "logoFile" : "",
+  "updateUrl" : "",
+  "parent" : "",
+  "screenshots": [
+  ]
+}
+]
