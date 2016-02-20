@@ -1,5 +1,6 @@
 package fox.spiteful.forbidden.items;
 
+import fox.spiteful.forbidden.Forbidden;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
@@ -16,6 +17,7 @@ public class ItemResource extends Item {
         setHasSubtypes(true);
         setUnlocalizedName("forbidden_resource");
         setMaxDamage(0);
+        setCreativeTab(Forbidden.tab);
     }
     @Override
     public String getUnlocalizedName(ItemStack stack) {

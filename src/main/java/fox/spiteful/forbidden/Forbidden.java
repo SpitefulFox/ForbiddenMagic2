@@ -13,7 +13,7 @@ import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 
 @Mod(
-        modid = "ForbiddenMagic",
+        modid = "Forbidden",
         name = "Forbidden Magic 2"
 )
 public class Forbidden {

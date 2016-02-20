@@ -10,7 +10,7 @@ public class ForbiddenBlocks {
     public static void carveMonolith(){
 
         chalk_rune = new BlockChalk();
-        GameRegistry.registerBlock(chalk_rune, "Chalk_Rune");
+        GameRegistry.registerBlock(chalk_rune, "chalk_rune");
 
     }
 
