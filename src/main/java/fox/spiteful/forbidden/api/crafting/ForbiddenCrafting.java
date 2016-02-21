@@ -10,7 +10,7 @@ public class ForbiddenCrafting {
 
     public static boolean isHumanFlesh(ItemStack input){
         for(ItemStack stack : hoomin){
-            if(stack.getItem() == input.getItem() && stack.getItemDamage() == input.getItemDamage())
+            if(stack.isItemEqual(input))
                 return true;
         }
         return false;
@@ -18,7 +18,7 @@ public class ForbiddenCrafting {
 
     public static void addHumanFlesh(ItemStack flesh){
         if(!isHumanFlesh(flesh))
-            hoomin.add(flesh);
+            hoomin.add(flesh.copy());
     }
 
     public static ArrayList<ItemStack> getListHumanFlesh(){

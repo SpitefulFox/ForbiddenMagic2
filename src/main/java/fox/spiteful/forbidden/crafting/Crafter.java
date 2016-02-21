@@ -2,6 +2,7 @@ package fox.spiteful.forbidden.crafting;
 
 import fox.spiteful.forbidden.api.crafting.ForbiddenCrafting;
 import fox.spiteful.forbidden.items.ForbiddenItems;
+import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fml.common.registry.GameRegistry;
@@ -18,5 +19,9 @@ public class Crafter {
         ForbiddenCrafting.addHumanFlesh(new ItemStack(Items.skull, 1, 1));
         ForbiddenCrafting.addHumanFlesh(new ItemStack(Items.skull, 1, 2));
         ForbiddenCrafting.addHumanFlesh(new ItemStack(Items.skull, 1, 3));
+        ForbiddenCrafting.addHumanFlesh(new ItemStack(Blocks.skull, 1, 0));
+        ForbiddenCrafting.addHumanFlesh(new ItemStack(Blocks.skull, 1, 1));
+        ForbiddenCrafting.addHumanFlesh(new ItemStack(Blocks.skull, 1, 2));
+        ForbiddenCrafting.addHumanFlesh(new ItemStack(Blocks.skull, 1, 3));
     }
 }
