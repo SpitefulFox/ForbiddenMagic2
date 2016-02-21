@@ -1,12 +1,15 @@
 package fox.spiteful.forbidden;
 
+import fox.spiteful.forbidden.entity.EntityHumanItem;
 import fox.spiteful.forbidden.items.ForbiddenItems;
 import net.minecraft.entity.EntityAgeable;
 import net.minecraft.entity.item.EntityItem;
 import net.minecraft.entity.passive.EntityCow;
 import net.minecraft.entity.passive.EntityPig;
 import net.minecraft.entity.passive.EntitySheep;
+import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
+import net.minecraftforge.event.entity.item.ItemTossEvent;
 import net.minecraftforge.event.entity.living.LivingDropsEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
@@ -33,6 +36,17 @@ public class FMEventHandler {
         EntityItem entityitem = new EntityItem(event.entityLiving.worldObj, event.entityLiving.posX, event.entityLiving.posY, event.entityLiving.posZ, drop);
         entityitem.setDefaultPickupDelay();
         event.drops.add(entityitem);
+    }
+
+    @SubscribeEvent
+    public void throwItem(ItemTossEvent event){
+        if(event.entity.worldObj.isRemote)
+            return;
+        if(event.entityItem.getEntityItem().getItem() == Items.rotten_flesh && !(event.entityItem instanceof EntityHumanItem)){
+            EntityItem drop = new EntityHumanItem(event.entityItem.worldObj, event.entityItem, event.entityItem.getEntityItem());
+            event.entityItem.worldObj.spawnEntityInWorld(drop);
+            event.setCanceled(true);
+        }
     }
 
 }

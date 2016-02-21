@@ -1,9 +1,12 @@
 package fox.spiteful.forbidden.items;
 
 import fox.spiteful.forbidden.Forbidden;
+import fox.spiteful.forbidden.entity.EntityFireproofItem;
 import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.entity.Entity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
@@ -11,7 +14,7 @@ import java.util.List;
 
 public class ItemResource extends Item {
 
-    private static final String[] types = {"vellum"};
+    private static final String[] types = {"vellum", "ashes"};
 
     public ItemResource(){
         setHasSubtypes(true);
@@ -23,6 +26,7 @@ public class ItemResource extends Item {
     public String getUnlocalizedName(ItemStack stack) {
         return getUnlocalizedName() + "_" + types[stack.getItemDamage() % types.length];
     }
+
     @Override
     @SideOnly(Side.CLIENT)
     public void getSubItems(Item item, CreativeTabs par2CreativeTabs, List<ItemStack> list) {
@@ -33,6 +37,24 @@ public class ItemResource extends Item {
 
     public static String[] getTypes(){
         return types;
+    }
+
+    @Override
+    public boolean hasCustomEntity (ItemStack stack)
+    {
+        if(stack.getItemDamage() == 1)
+            return true;
+        else
+            return super.hasCustomEntity(stack);
+    }
+
+    @Override
+    public Entity createEntity (World world, Entity location, ItemStack itemstack)
+    {
+        if(itemstack.getItemDamage() == 1)
+            return new EntityFireproofItem(world, location, itemstack);
+        else
+            return super.createEntity(world, location, itemstack);
     }
 
 }

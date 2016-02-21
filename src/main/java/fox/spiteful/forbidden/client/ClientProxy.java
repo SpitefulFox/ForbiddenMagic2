@@ -19,6 +19,7 @@ public class ClientProxy extends Proxy {
             setCustomModelResourceLocation(ForbiddenItems.resource, x, ItemResource.getTypes()[x]);
         }
         setCustomModelResourceLocation(Item.getItemFromBlock(ForbiddenBlocks.chalk_rune), 0, "chalk_rune");
+        setCustomModelResourceLocation(ForbiddenItems.demon_chalk, 0, "demon_chalk");
     }
 
     public void setCustomModelResourceLocation(Item item, int meta, String name){

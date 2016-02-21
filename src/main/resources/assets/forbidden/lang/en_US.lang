@@ -1,6 +1,8 @@
 #
 # Items
 item.forbidden_resource_vellum.name=Vellum
+item.forbidden_resource_ashes.name=Ashes
+item.demon_chalk.name=Profane Chalk
 #
 # Blocks
 tile.forbidden_chalk_rune.name=Profane Rune
