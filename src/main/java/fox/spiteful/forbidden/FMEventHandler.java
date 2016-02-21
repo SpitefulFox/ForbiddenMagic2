@@ -1,5 +1,6 @@
 package fox.spiteful.forbidden;
 
+import fox.spiteful.forbidden.api.crafting.ForbiddenCrafting;
 import fox.spiteful.forbidden.entity.EntityHumanItem;
 import fox.spiteful.forbidden.items.ForbiddenItems;
 import net.minecraft.entity.EntityAgeable;
@@ -42,8 +43,9 @@ public class FMEventHandler {
     public void throwItem(ItemTossEvent event){
         if(event.entity.worldObj.isRemote)
             return;
-        if(event.entityItem.getEntityItem().getItem() == Items.rotten_flesh && !(event.entityItem instanceof EntityHumanItem)){
+        if(ForbiddenCrafting.isHumanFlesh(event.entityItem.getEntityItem()) && !(event.entityItem instanceof EntityHumanItem)){
             EntityItem drop = new EntityHumanItem(event.entityItem.worldObj, event.entityItem, event.entityItem.getEntityItem());
+            drop.setDefaultPickupDelay();
             event.entityItem.worldObj.spawnEntityInWorld(drop);
             event.setCanceled(true);
         }

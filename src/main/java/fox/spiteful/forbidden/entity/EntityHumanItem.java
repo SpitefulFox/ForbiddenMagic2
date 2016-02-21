@@ -36,6 +36,7 @@ public class EntityHumanItem extends EntityItem {
         if(worldObj.isRemote)
             return;
         EntityItem drop = new EntityFireproofItem(this.worldObj, this, new ItemStack(ForbiddenItems.resource, this.getEntityItem().stackSize, 1));
+        drop.setDefaultPickupDelay();
         this.worldObj.spawnEntityInWorld(drop);
         this.setDead();
     }
