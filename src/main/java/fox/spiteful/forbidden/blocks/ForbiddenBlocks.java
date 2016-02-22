@@ -1,6 +1,8 @@
 package fox.spiteful.forbidden.blocks;
 
+import fox.spiteful.forbidden.Forbidden;
 import net.minecraft.block.Block;
+import net.minecraft.block.material.Material;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 
 public class ForbiddenBlocks {

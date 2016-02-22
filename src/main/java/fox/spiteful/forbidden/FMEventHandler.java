@@ -5,9 +5,11 @@ import fox.spiteful.forbidden.entity.EntityHumanItem;
 import fox.spiteful.forbidden.items.ForbiddenItems;
 import net.minecraft.entity.EntityAgeable;
 import net.minecraft.entity.item.EntityItem;
+import net.minecraft.entity.monster.EntityZombie;
 import net.minecraft.entity.passive.EntityCow;
 import net.minecraft.entity.passive.EntityPig;
 import net.minecraft.entity.passive.EntitySheep;
+import net.minecraft.entity.passive.EntityVillager;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.event.entity.item.ItemTossEvent;
@@ -29,6 +31,9 @@ public class FMEventHandler {
             if(animal.isChild()){
                 addDrop(event, new ItemStack(ForbiddenItems.resource, 1 + event.lootingLevel + randy.nextInt(3), 0));
             }
+        }
+        else if(event.entityLiving instanceof EntityVillager && event.entityLiving.isBurning()){
+            addDrop(event, new ItemStack(ForbiddenItems.resource, 1 + randy.nextInt(3), 1));
         }
 
     }

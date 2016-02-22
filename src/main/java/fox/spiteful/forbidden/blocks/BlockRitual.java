@@ -24,4 +24,10 @@ public class BlockRitual extends BlockContainer {
         return new TileRitualTable();
     }
 
+    @Override
+    public int getRenderType()
+    {
+        return 3;
+    }
+
 }
