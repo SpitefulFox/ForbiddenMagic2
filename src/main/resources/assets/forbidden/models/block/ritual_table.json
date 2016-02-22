@@ -1,5 +1,5 @@
 {
-    "parent": "minecraft:cube",
+    "parent": "minecraft:block/cube",
     "textures": {
         "particle": "forbidden:blocks/ritual_table_bottom",
         "down": "forbidden:blocks/ritual_table_bottom",
