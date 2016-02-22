@@ -15,10 +15,6 @@ public class Crafter {
 
         ForbiddenCrafting.addHumanFlesh(new ItemStack(Items.rotten_flesh));
         ForbiddenCrafting.addHumanFlesh(new ItemStack(Items.bone));
-        ForbiddenCrafting.addHumanFlesh(new ItemStack(Items.skull, 1, 0));
-        ForbiddenCrafting.addHumanFlesh(new ItemStack(Items.skull, 1, 1));
-        ForbiddenCrafting.addHumanFlesh(new ItemStack(Items.skull, 1, 2));
-        ForbiddenCrafting.addHumanFlesh(new ItemStack(Items.skull, 1, 3));
         ForbiddenCrafting.addHumanFlesh(new ItemStack(Blocks.skull, 1, 0));
         ForbiddenCrafting.addHumanFlesh(new ItemStack(Blocks.skull, 1, 1));
         ForbiddenCrafting.addHumanFlesh(new ItemStack(Blocks.skull, 1, 2));

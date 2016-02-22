@@ -1,0 +1,12 @@
+{
+    "parent": "minecraft:cube",
+    "textures": {
+        "particle": "forbidden:blocks/ritual_table_bottom",
+        "down": "forbidden:blocks/ritual_table_bottom",
+        "up": "forbidden:blocks/ritual_table_top",
+        "north": "forbidden:blocks/ritual_table_side",
+        "east": "forbidden:blocks/ritual_table_side",
+        "south": "forbidden:blocks/ritual_table_side",
+        "west": "forbidden:blocks/ritual_table_side"
+    }
+}
