@@ -5,11 +5,8 @@ import net.minecraft.inventory.IInventory;
 import net.minecraft.inventory.ISidedInventory;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
-import net.minecraft.util.ChatComponentText;
-import net.minecraft.util.ChatComponentTranslation;
-import net.minecraft.util.IChatComponent;
 
-public class TileRitualTable extends TileForbidden implements IInventory {
+/*public class TileRitualTable extends TileForbidden implements IInventory {
 
     private ItemStack result;
     private ItemStack[] matrix = new ItemStack[9];
@@ -192,4 +189,4 @@ public class TileRitualTable extends TileForbidden implements IInventory {
         return false;
     }
 
-}
+}*/

@@ -25,33 +25,33 @@ public class FMEventHandler {
     @SubscribeEvent
     public void onLivingDrops(LivingDropsEvent event) {
 
-        if(event.entityLiving instanceof EntityCow || event.entityLiving instanceof EntityPig ||
-                event.entityLiving instanceof EntitySheep){
-            EntityAgeable animal = (EntityAgeable)event.entityLiving;
+        if(event.getEntityLiving() instanceof EntityCow || event.getEntityLiving() instanceof EntityPig ||
+                event.getEntityLiving() instanceof EntitySheep){
+            EntityAgeable animal = (EntityAgeable)event.getEntityLiving();
             if(animal.isChild()){
-                addDrop(event, new ItemStack(ForbiddenItems.resource, 1 + event.lootingLevel + randy.nextInt(3), 0));
+                addDrop(event, new ItemStack(ForbiddenItems.resource, 1 + event.getLootingLevel() + randy.nextInt(3), 0));
             }
         }
-        else if(event.entityLiving instanceof EntityVillager && event.entityLiving.isBurning()){
+        else if(event.getEntityLiving() instanceof EntityVillager && event.getEntityLiving().isBurning()){
             addDrop(event, new ItemStack(ForbiddenItems.resource, 1 + randy.nextInt(3), 1));
         }
 
     }
 
     private void addDrop(LivingDropsEvent event, ItemStack drop) {
-        EntityItem entityitem = new EntityItem(event.entityLiving.worldObj, event.entityLiving.posX, event.entityLiving.posY, event.entityLiving.posZ, drop);
+        EntityItem entityitem = new EntityItem(event.getEntityLiving().worldObj, event.getEntityLiving().posX, event.getEntityLiving().posY, event.getEntityLiving().posZ, drop);
         entityitem.setDefaultPickupDelay();
-        event.drops.add(entityitem);
+        event.getDrops().add(entityitem);
     }
 
     @SubscribeEvent
     public void throwItem(ItemTossEvent event){
-        if(event.entity.worldObj.isRemote)
+        if(event.getEntity().worldObj.isRemote)
             return;
-        if(ForbiddenCrafting.isHumanFlesh(event.entityItem.getEntityItem()) && !(event.entityItem instanceof EntityHumanItem)){
-            EntityItem drop = new EntityHumanItem(event.entityItem.worldObj, event.entityItem, event.entityItem.getEntityItem());
+        if(ForbiddenCrafting.isHumanFlesh(event.getEntityItem().getEntityItem()) && !(event.getEntityItem() instanceof EntityHumanItem)){
+            EntityItem drop = new EntityHumanItem(event.getEntityItem().worldObj, event.getEntityItem(), event.getEntityItem().getEntityItem());
             drop.setDefaultPickupDelay();
-            event.entityItem.worldObj.spawnEntityInWorld(drop);
+            event.getEntityItem().worldObj.spawnEntityInWorld(drop);
             event.setCanceled(true);
         }
     }

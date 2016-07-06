@@ -10,11 +10,14 @@ public class ForbiddenItems {
 
     public static void enchant(){
 
-        resource = new ItemResource();
-        GameRegistry.registerItem(resource, "resource");
-        demon_chalk = new ItemChalk();
-        GameRegistry.registerItem(demon_chalk, "demon_chalk");
+        resource = register(new ItemResource(), "resource");
+        demon_chalk = register(new ItemChalk(), "demon_chalk");
+    }
 
+    public static Item register(Item item, String name){
+        item.setRegistryName(name);
+        GameRegistry.register(item);
+        return item;
     }
 
 }
